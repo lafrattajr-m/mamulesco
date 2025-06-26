@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mamulesco - Site em Desenvolvimento</title>
+    <link rel="icon" href="imgs/logo_mamulesco.png" type="image/png">
     <style>
         * {
             margin: 0;
@@ -39,6 +40,28 @@
             margin-bottom: 30px;
             font-size: 1.8rem;
             line-height: 1.4;
+            height: 84px; /* Altura fixa para evitar saltos no layout */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .typing-text {
+            border-right: 2px solid #FAD266; /* Cursor piscando */
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3s steps(40) 1s 1 normal both,
+                       blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #FAD266 }
         }
         
         .instagram-btn {
@@ -64,6 +87,15 @@
         @media (max-width: 768px) {
             h1 {
                 font-size: 1.4rem;
+                height: auto;
+                white-space: normal;
+            }
+            
+            .typing-text {
+                white-space: normal;
+                border-right: none;
+                animation: none;
+                display: block;
             }
             
             .instagram-btn {
@@ -77,7 +109,7 @@
     <div class="logo-container">
         <!-- Logotipo -->
         <img src="imgs/logo_mamulesco.png" alt="Mamulesco Logo" class="logo">
-        <h1>Estamos em desenvolvimento, enquanto isto acesse o instagram!</h1>
+        <h1><span class="typing-text">Estamos em desenvolvimento, enquanto isto acesse o instagram!</span></h1>
     </div>
     
     <a href="https://www.instagram.com/mamulesco" target="_blank" class="instagram-btn">
