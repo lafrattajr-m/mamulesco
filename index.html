@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Mamulesco - Site em Desenvolvimento</title>
     <link rel="icon" href="imgs/logo_mamulesco.png" type="image/png">
     <style>
@@ -13,10 +13,17 @@
             font-family: Arial, sans-serif;
         }
         
-        body {
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
             background-color: #0D1B2A;
             color: #F5F5F5;
-            min-height: 100vh;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -26,28 +33,28 @@
         }
         
         .logo-container {
-            margin-bottom: 40px;
+            margin-bottom: 5vh;
+            max-width: 90%;
         }
         
         .logo {
-            max-width: 200px;
+            max-width: min(200px, 40vw);
             height: auto;
             margin-bottom: 15px;
         }
         
         h1 {
             color: #FAD266;
-            margin-bottom: 30px;
-            font-size: 1.8rem;
+            margin-bottom: 5vh;
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
             line-height: 1.4;
-            height: 84px; /* Altura fixa para evitar saltos no layout */
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            min-height: 0;
+            padding: 0 10px;
         }
         
         .typing-text {
-            border-right: 2px solid #FAD266; /* Cursor piscando */
+            display: inline-block;
+            border-right: 2px solid #FAD266;
             white-space: nowrap;
             overflow: hidden;
             animation: typing 3s steps(40) 1s 1 normal both,
@@ -68,14 +75,14 @@
             background-color: #2E7D32;
             color: #F5F5F5;
             border: none;
-            padding: 15px 30px;
-            font-size: 1.2rem;
+            padding: min(15px, 4vw) min(30px, 8vw);
+            font-size: clamp(1rem, 4vw, 1.2rem);
             border-radius: 50px;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s ease;
-            margin-top: 20px;
+            margin-top: 2vh;
         }
         
         .instagram-btn:hover {
@@ -85,35 +92,26 @@
         }
         
         @media (max-width: 768px) {
-            h1 {
-                font-size: 1.4rem;
-                height: auto;
-                white-space: normal;
-            }
-            
             .typing-text {
-                white-space: normal;
-                border-right: none;
                 animation: none;
+                border-right: none;
+                white-space: normal;
                 display: block;
-            }
-            
-            .instagram-btn {
-                padding: 12px 25px;
-                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="logo-container">
-        <!-- Logotipo -->
-        <img src="imgs/logo_mamulesco.png" alt="Mamulesco Logo" class="logo">
-        <h1><span class="typing-text">Estamos em desenvolvimento, enquanto isto acesse o instagram!</span></h1>
+    <div class="container">
+        <div class="logo-container">
+            <!-- Logotipo -->
+            <img src="imgs/logo_mamulesco.png" alt="Mamulesco Logo" class="logo">
+            <h1><span class="typing-text">Estamos em desenvolvimento, enquanto isto acesse o instagram!</span></h1>
+        </div>
+        
+        <a href="https://www.instagram.com/mamulesco" target="_blank" class="instagram-btn">
+            @mamulesco
+        </a>
     </div>
-    
-    <a href="https://www.instagram.com/mamulesco" target="_blank" class="instagram-btn">
-        @mamulesco
-    </a>
 </body>
 </html>
