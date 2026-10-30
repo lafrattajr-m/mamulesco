@@ -1,37 +1,271 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mamulesco - Site em Desenvolvimento</title>
-<meta name="description" content="Mamulesco: novidades em breve. Acompanhe nosso conteúdo no Instagram.">
-<meta name="theme-color" content="#0d1b2a">
-<link rel="icon" href="imgs/logo_mamulesco.png" type="image/png">
-<style>
-:root{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:dark;--accent:#FAD266;--accent2:#65c88e;--bg:#0d1b2a}
-*{box-sizing:border-box}html{min-height:100%;background:var(--bg)}body{margin:0;min-height:100svh;display:grid;place-items:center;padding:24px;color:#f9f9fb;background:radial-gradient(ellipse at 50% 0%,color-mix(in srgb,var(--accent2) 15%,transparent),transparent 55%),linear-gradient(165deg,var(--bg),#070c17)}
-main{width:min(100%,710px);padding:clamp(30px,7vw,65px) 24px;text-align:center;border:1px solid #ffffff24;border-radius:28px;background:linear-gradient(140deg,#ffffff0e,#ffffff04);box-shadow:0 25px 90px #0007}
-.logo{display:block;max-width:min(58vw,240px);max-height:220px;width:auto;height:auto;object-fit:contain;margin:0 auto 26px;filter:drop-shadow(0 12px 25px #0005)}
-.pill{display:inline-block;padding:9px 18px;border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);border-radius:99px;color:var(--accent);letter-spacing:.15em;text-transform:uppercase;font-size:.76rem;font-weight:750}
-h1{font-size:clamp(2.2rem,7vw,4rem);letter-spacing:-.05em;margin:24px 0 10px;line-height:1.1}
-h2{font-size:clamp(1.13rem,3.5vw,1.48rem);font-weight:500;color:var(--accent);margin:0}
-p{max-width:480px;margin:20px auto 30px;color:#c4cad4;line-height:1.7;font-size:1.02rem}
-a.cta{display:inline-flex;gap:10px;align-items:center;justify-content:center;text-decoration:none;color:#101522;background:linear-gradient(110deg,var(--accent),var(--accent2));padding:15px 27px;border-radius:99px;font-weight:750;transition:transform .2s,box-shadow .2s}
-a.cta:hover,a.cta:focus-visible{transform:translateY(-2px);box-shadow:0 8px 26px color-mix(in srgb,var(--accent) 28%,transparent)}
-footer{margin-top:36px;color:#97a1af;font-size:.8rem}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0A111A">
+  <title>Mamulesco | Humor, personagens e histórias</title>
+  <meta name="description" content="Mamulesco: humor inteligente, personagens marcantes e situações do cotidiano. Acompanhe os vídeos e novidades nas redes sociais.">
+  <link rel="canonical" href="https://mamulesco.com.br/">
+  <link rel="icon" href="imgs/logo_mamulesco.png" type="image/png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Mamulesco">
+  <meta property="og:title" content="Mamulesco | Humor, personagens e histórias">
+  <meta property="og:description" content="O cotidiano já é uma comédia. A gente só transforma em espetáculo.">
+  <meta property="og:url" content="https://mamulesco.com.br/">
+  <meta property="og:image" content="https://mamulesco.com.br/imgs/logo_mamulesco.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mamulesco | Humor, personagens e histórias">
+  <meta name="twitter:description" content="Humor inteligente, personagens marcantes e situações do cotidiano.">
+  <meta name="twitter:image" content="https://mamulesco.com.br/imgs/logo_mamulesco.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg-outer: #0A111A;
+      --bg-card: #1A222D;
+      --orange: #F37F1D;
+      --yellow: #F3CF65;
+      --white: #FFFFFF;
+      --muted: #94A0B2;
+      --cta: linear-gradient(90deg, #FCE373 0%, #A3F1CE 100%);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+    * { box-sizing: border-box; }
+    html { min-width: 320px; min-height: 100%; background: var(--bg-outer); }
+    body {
+      min-height: 100svh;
+      margin: 0;
+      color: var(--white);
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(243,127,29,.15), transparent 42%),
+        radial-gradient(ellipse at 8% 70%, rgba(243,207,101,.06), transparent 34%),
+        var(--bg-outer);
+    }
+    a { color: inherit; }
+    .shell {
+      width: min(100% - 40px, 1040px);
+      margin: 0 auto;
+      padding: clamp(34px, 7vw, 76px) 0 28px;
+    }
+    .hero { text-align: center; }
+    .brand-mark {
+      display: block;
+      width: min(58vw, 230px);
+      max-height: 190px;
+      object-fit: contain;
+      margin: 0 auto 28px;
+      filter: drop-shadow(0 14px 30px rgba(0,0,0,.4));
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 15px;
+      border: 1px solid rgba(243,207,101,.35);
+      border-radius: 999px;
+      color: var(--yellow);
+      background: rgba(243,207,101,.07);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 14px rgba(243,127,29,.8);
+    }
+    h1 {
+      margin: 23px 0 12px;
+      font-family: "Space Grotesk", Inter, sans-serif;
+      font-size: clamp(2.6rem, 8vw, 5.2rem);
+      font-weight: 700;
+      letter-spacing: -.075em;
+      line-height: .98;
+    }
+    h1 span { color: var(--orange); }
+    .lead {
+      max-width: 640px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: clamp(1rem, 2.4vw, 1.2rem);
+      line-height: 1.75;
+    }
+    .lead strong { color: var(--white); font-weight: 600; }
+    .social-section { margin: clamp(42px, 7vw, 66px) auto 0; }
+    .section-heading { margin-bottom: 20px; text-align: center; }
+    .section-heading h2 {
+      margin: 0 0 8px;
+      font-family: "Space Grotesk", Inter, sans-serif;
+      font-size: clamp(1.35rem, 4vw, 1.8rem);
+      letter-spacing: -.04em;
+    }
+    .section-heading p { margin: 0; color: var(--muted); font-size: .94rem; }
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .social-card {
+      position: relative;
+      display: flex;
+      min-height: 156px;
+      align-items: center;
+      gap: 18px;
+      padding: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 22px;
+      background: linear-gradient(145deg, rgba(26,34,45,.98), rgba(26,34,45,.72));
+      text-decoration: none;
+      box-shadow: 0 18px 44px rgba(0,0,0,.18);
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+    .social-card::after {
+      position: absolute;
+      right: -38px;
+      bottom: -65px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: var(--glow, rgba(243,127,29,.15));
+      filter: blur(5px);
+      content: "";
+      pointer-events: none;
+    }
+    .social-card:hover, .social-card:focus-visible {
+      transform: translateY(-4px);
+      border-color: rgba(243,207,101,.5);
+      box-shadow: 0 22px 54px rgba(0,0,0,.3);
+      outline: none;
+    }
+    .social-icon {
+      z-index: 1;
+      display: grid;
+      width: 58px;
+      height: 58px;
+      flex: 0 0 58px;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 17px;
+      background: rgba(255,255,255,.07);
+    }
+    .social-icon svg { width: 29px; height: 29px; fill: currentColor; }
+    .social-copy { z-index: 1; min-width: 0; }
+    .social-copy strong {
+      display: block;
+      margin-bottom: 5px;
+      font-family: "Space Grotesk", Inter, sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: -.025em;
+    }
+    .social-copy span { display: block; color: var(--muted); font-size: .88rem; }
+    .social-arrow {
+      z-index: 1;
+      margin-left: auto;
+      color: var(--yellow);
+      font-size: 1.35rem;
+    }
+    .instagram { --glow: rgba(243,127,29,.22); }
+    .youtube { --glow: rgba(255,50,50,.18); }
+    .tiktok { --glow: rgba(37,244,238,.16); }
+    .facebook { --glow: rgba(24,119,242,.2); }
+    .note {
+      max-width: 570px;
+      margin: 25px auto 0;
+      color: var(--muted);
+      font-size: .8rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+    footer {
+      margin-top: clamp(46px, 8vw, 78px);
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: var(--muted);
+      font-size: .78rem;
+      text-align: center;
+    }
+    footer strong { color: var(--white); font-weight: 600; }
+    @media (max-width: 600px) {
+      .shell { width: min(100% - 30px, 480px); padding-top: 34px; }
+      .social-grid { grid-template-columns: 1fr; gap: 12px; }
+      .social-card { min-height: 124px; padding: 19px; border-radius: 18px; }
+      .social-icon { width: 52px; height: 52px; flex-basis: 52px; border-radius: 15px; }
+      .brand-mark { margin-bottom: 22px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
 </head>
 <body>
-<main>
-<img class="logo" src="imgs/logo_mamulesco.png" alt="Logotipo Mamulesco" width="240" height="220">
-<span class="pill">Novidades em breve</span>
-<h1>Mamulesco</h1>
-<h2>Uma nova experiência está chegando.</h2>
-<p>Estamos preparando novidades. Enquanto isso, acompanhe nosso conteúdo no Instagram.</p>
-<a class="cta" href="https://www.instagram.com/mamulesco" target="_blank" rel="noopener noreferrer">Acompanhe @mamulesco ↗</a>
-<footer>© <span id="year">2026</span> Mamulesco. Todos os direitos reservados.</footer>
-</main>
-<script>document.getElementById("year").textContent=new Date().getFullYear()</script>
+  <main class="shell">
+    <header class="hero">
+      <img class="brand-mark" src="imgs/logo_mamulesco.png" alt="Logotipo Mamulesco" width="230" height="190" fetchpriority="high">
+      <span class="eyebrow">Em breve, uma nova experiência</span>
+      <h1>O cotidiano já é uma comédia.<br><span>A gente só transforma em espetáculo.</span></h1>
+      <p class="lead">Humor inteligente, personagens marcantes e situações que você conhece bem. <strong>O universo Mamulesco está em construção.</strong></p>
+    </header>
+
+    <section class="social-section" aria-labelledby="social-title">
+      <div class="section-heading">
+        <h2 id="social-title">Enquanto isso, acompanhe por aqui</h2>
+        <p>Os personagens e as histórias continuam nas redes.</p>
+      </div>
+
+      <div class="social-grid">
+        <a class="social-card instagram" href="https://www.instagram.com/mamulesco" target="_blank" rel="noopener noreferrer" aria-label="Acessar Instagram do Mamulesco">
+          <span class="social-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/></svg>
+          </span>
+          <span class="social-copy"><strong>Instagram</strong><span>@mamulesco · Bastidores e humor</span></span>
+          <span class="social-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="social-card youtube" href="https://www.youtube.com/@mamulesco" target="_blank" rel="noopener noreferrer" aria-label="Acessar canal do Mamulesco no YouTube">
+          <span class="social-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>
+          </span>
+          <span class="social-copy"><strong>YouTube</strong><span>@mamulesco · Vídeos e esquetes</span></span>
+          <span class="social-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="social-card tiktok" href="https://www.tiktok.com/@mamulesco" target="_blank" rel="noopener noreferrer" aria-label="Acessar TikTok do Mamulesco">
+          <span class="social-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M19.6 7.2a6.8 6.8 0 0 1-4.2-1.5v8.1a6.2 6.2 0 1 1-6.2-6.2c.4 0 .8 0 1.2.1v3.4a2.8 2.8 0 1 0 2 2.7V2h3.1c.2 2.4 1.8 4.3 4.1 4.8v.4Z"/></svg>
+          </span>
+          <span class="social-copy"><strong>TikTok</strong><span>@mamulesco · Vídeos curtos</span></span>
+          <span class="social-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="social-card facebook" href="https://www.facebook.com/mamulesco" target="_blank" rel="noopener noreferrer" aria-label="Acessar Facebook do Mamulesco">
+          <span class="social-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z"/></svg>
+          </span>
+          <span class="social-copy"><strong>Facebook</strong><span>/mamulesco · Página oficial</span></span>
+          <span class="social-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <p class="note">Um só nome. O universo Mamulesco em todas as redes.</p>
+    </section>
+
+    <footer>© <span id="year">2026</span> <strong>Mamulesco</strong>. Uma produção LTTJR Grupo Empresarial.</footer>
+  </main>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
