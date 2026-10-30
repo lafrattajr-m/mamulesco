@@ -57,15 +57,17 @@
     .hero { text-align: center; }
     .brand-mark {
       display: block;
-      width: min(58vw, 230px);
-      height: 190px;
-      object-fit: contain;
+      width: min(62vw, 230px);
+      height: 260px;
+      object-fit: cover;
+      object-position: center;
       margin: 0 auto 28px;
-      padding: 12px;
-      border: 2px solid rgba(243,207,101,.72);
-      border-radius: 50% / 44%;
+      padding: 0;
+      overflow: hidden;
+      border: 3px solid rgba(243,207,101,.78);
+      border-radius: 50%;
       background: radial-gradient(ellipse, rgba(243,127,29,.12), rgba(26,34,45,.72));
-      filter: drop-shadow(0 14px 30px rgba(0,0,0,.4));
+      box-shadow: 0 14px 30px rgba(0,0,0,.4);
     }
     .eyebrow {
       display: inline-flex;
